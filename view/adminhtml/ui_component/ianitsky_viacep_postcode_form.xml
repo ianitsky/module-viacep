@@ -115,7 +115,7 @@
 				</validation>
 			</settings>
 		</field>
-		<field formElement="textarea" name="state" sortOrder="70">
+		<field formElement="textarea" name="region" sortOrder="70">
 			<argument name="data" xsi:type="array">
 				<item name="config" xsi:type="array">
 					<item name="source" xsi:type="string">Postcode</item>
@@ -123,8 +123,8 @@
 			</argument>
 			<settings>
 				<dataType>text</dataType>
-				<label translate="true">state</label>
-				<dataScope>state</dataScope>
+				<label translate="true">region</label>
+				<dataScope>region</dataScope>
 				<validation>
 					<rule name="required-entry" xsi:type="boolean">true</rule>
 				</validation>

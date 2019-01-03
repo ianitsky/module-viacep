@@ -28,7 +28,8 @@ interface PostcodeInterface extends \Magento\Framework\Api\ExtensibleDataInterfa
     const POSTCODE_ID = 'postcode_id';
     const NEIGHBORHOOD = 'neighborhood';
     const IBGE = 'ibge';
-    const STATE = 'state';
+    const REGION = 'region';
+    const REGION_ID = 'region_id';
     const POSTCODE = 'postcode';
     const CITY = 'city';
     const COMPLEMENT = 'complement';
@@ -58,21 +59,6 @@ interface PostcodeInterface extends \Magento\Framework\Api\ExtensibleDataInterfa
      * @return \Ianitsky\ViaCep\Api\Data\PostcodeInterface
      */
     public function setPostcode($postcode);
-
-    /**
-     * Retrieve existing extension attributes object or create a new one.
-     * @return \Ianitsky\ViaCep\Api\Data\PostcodeExtensionInterface|null
-     */
-    public function getExtensionAttributes();
-
-    /**
-     * Set an extension attributes object.
-     * @param \Ianitsky\ViaCep\Api\Data\PostcodeExtensionInterface $extensionAttributes
-     * @return $this
-     */
-    public function setExtensionAttributes(
-        \Ianitsky\ViaCep\Api\Data\PostcodeExtensionInterface $extensionAttributes
-    );
 
     /**
      * Get street
@@ -127,17 +113,30 @@ interface PostcodeInterface extends \Magento\Framework\Api\ExtensibleDataInterfa
     public function setCity($city);
 
     /**
-     * Get state
+     * Get region
      * @return string|null
      */
-    public function getState();
+    public function getRegion();
 
     /**
-     * Set state
-     * @param string $state
+     * Set region
+     * @param string $region
      * @return \Ianitsky\ViaCep\Api\Data\PostcodeInterface
      */
-    public function setState($state);
+    public function setRegion($region);
+
+    /**
+     * Get region ID
+     * @return int|null
+     */
+    public function getRegionId();
+
+    /**
+     * Set region ID
+     * @param int $regionId
+     * @return \Ianitsky\ViaCep\Api\Data\PostcodeInterface
+     */
+    public function setRegionId($regionId);
 
     /**
      * Get ibge
@@ -151,4 +150,19 @@ interface PostcodeInterface extends \Magento\Framework\Api\ExtensibleDataInterfa
      * @return \Ianitsky\ViaCep\Api\Data\PostcodeInterface
      */
     public function setIbge($ibge);
+
+    /**
+     * Retrieve existing extension attributes object or create a new one.
+     * @return \Ianitsky\ViaCep\Api\Data\PostcodeExtensionInterface|null
+     */
+    public function getExtensionAttributes();
+
+    /**
+     * Set an extension attributes object.
+     * @param \Ianitsky\ViaCep\Api\Data\PostcodeExtensionInterface $extensionAttributes
+     * @return $this
+     */
+    public function setExtensionAttributes(
+        \Ianitsky\ViaCep\Api\Data\PostcodeExtensionInterface $extensionAttributes
+    );
 }
