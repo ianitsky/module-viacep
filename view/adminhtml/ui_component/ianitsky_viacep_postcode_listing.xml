@@ -140,10 +140,10 @@
 				</editor>
 			</settings>
 		</column>
-		<column name="state">
+		<column name="region">
 			<settings>
 				<filter>text</filter>
-				<label translate="true">state</label>
+				<label translate="true">region</label>
 				<editor>
 					<editorType>text</editorType>
 					<validation>

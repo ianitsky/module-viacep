@@ -34,6 +34,11 @@ class ViaCep
     protected $postcodeResourceModel;
 
     /**
+     * @var \Magento\Directory\Model\ResourceModel\Region\CollectionFactory
+     */
+    protected $regionCollectionFactory;
+
+    /**
      * @var \GuzzleHttp\ClientInterface
      */
     protected $httpClient;
@@ -47,10 +52,12 @@ class ViaCep
     public function __construct(
         PostcodeFactory $postcodeFactory,
         ResourceModel\Postcode $postcodeResourceModel,
+        \Magento\Directory\Model\ResourceModel\Region\CollectionFactory $regionCollectionFactory,
         \GuzzleHttp\ClientInterface $httpClient
     ) {
         $this->postcodeFactory = $postcodeFactory;
         $this->postcodeResourceModel = $postcodeResourceModel;
+        $this->regionCollectionFactory = $regionCollectionFactory;
         $this->httpClient = $httpClient;
     }
 
@@ -70,6 +77,14 @@ class ViaCep
         }
 
         /**
+         * @var \Magento\Directory\Model\Region
+         */
+        $regionModel = $this->regionCollectionFactory->create()
+            ->addFieldToFilter('country_id', 'BR')
+            ->addFieldToFilter('code', $data['uf'])
+            ->getFirstItem();
+
+        /**
          * @var Postcode
          */
         $postcodeModel = $this->postcodeFactory->create()
@@ -78,7 +93,8 @@ class ViaCep
             ->setComplement($data['complemento'])
             ->setNeighborhood($data['bairro'])
             ->setCity($data['localidade'])
-            ->setState($data['uf'])
+            ->setRegion($data['uf'])
+            ->setRegionId($regionModel->getId())
             ->setIbge($data['ibge']);
 
         $this->postcodeResourceModel->save($postcodeModel);

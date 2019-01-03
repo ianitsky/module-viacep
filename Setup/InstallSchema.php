@@ -94,11 +94,19 @@ class InstallSchema implements InstallSchemaInterface
         );
 
         $table_ianitsky_viacep_postcode->addColumn(
-            'state',
+            'region',
             \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
             2,
             ['nullable' => False],
-            'state'
+            'region'
+        );
+
+        $table_ianitsky_viacep_postcode->addColumn(
+            'region_id',
+            \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
+            null,
+            ['unsigned' => true, 'nullable' => false],
+            'Region Id'
         );
 
         $table_ianitsky_viacep_postcode->addColumn(
@@ -112,6 +120,19 @@ class InstallSchema implements InstallSchemaInterface
         $table_ianitsky_viacep_postcode ->addIndex(
             $setup->getIdxName('ianitsky_viacep_postcode', ['postcode']),
             ['postcode']
+        );
+
+        $table_ianitsky_viacep_postcode->addForeignKey(
+            $setup->getFkName(
+                'ianitsky_viacep_postcode',
+                'region_id',
+                'directory_country_region',
+                'region_id'
+            ),
+            'region_id',
+            $setup->getTable('directory_country_region'),
+            'region_id',
+            \Magento\Framework\DB\Ddl\Table::ACTION_CASCADE
         );
 
         $setup->getConnection()->createTable($table_ianitsky_viacep_postcode);
