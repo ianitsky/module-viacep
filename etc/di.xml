@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Ianitsky\ViaCep\Api\PostcodeRepositoryInterface" type="Ianitsky\ViaCep\Model\PostcodeRepository"/>
+	<preference for="Ianitsky\ViaCep\Api\Data\PostcodeInterface" type="Ianitsky\ViaCep\Model\Data\Postcode"/>
+	<preference for="Ianitsky\ViaCep\Api\Data\PostcodeSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<preference for="GuzzleHttp\ClientInterface" type="GuzzleHttp\Client"/>
+	<virtualType name="Ianitsky\ViaCep\Model\ResourceModel\Postcode\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">ianitsky_viacep_postcode</argument>
+			<argument name="resourceModel" xsi:type="string">Ianitsky\ViaCep\Model\ResourceModel\Postcode\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="ianitsky_viacep_postcode_listing_data_source" xsi:type="string">Ianitsky\ViaCep\Model\ResourceModel\Postcode\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+	<preference for="Ianitsky\ViaCep\Api\ConsultManagementInterface" type="Ianitsky\ViaCep\Model\ConsultManagement"/>
+</config>
