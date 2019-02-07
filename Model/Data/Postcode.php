@@ -27,8 +27,7 @@ class Postcode extends \Magento\Framework\Api\AbstractExtensibleObject implement
 {
 
     /**
-     * Get postcode_id
-     * @return string|null
+     * @inheritdoc
      */
     public function getPostcodeId()
     {
@@ -36,9 +35,7 @@ class Postcode extends \Magento\Framework\Api\AbstractExtensibleObject implement
     }
 
     /**
-     * Set postcode_id
-     * @param string $postcodeId
-     * @return \Ianitsky\ViaCep\Api\Data\PostcodeInterface
+     * @inheritdoc
      */
     public function setPostcodeId($postcodeId)
     {
@@ -46,8 +43,7 @@ class Postcode extends \Magento\Framework\Api\AbstractExtensibleObject implement
     }
 
     /**
-     * Get postcode
-     * @return string|null
+     * @inheritdoc
      */
     public function getPostcode()
     {
@@ -55,9 +51,7 @@ class Postcode extends \Magento\Framework\Api\AbstractExtensibleObject implement
     }
 
     /**
-     * Set postcode
-     * @param string $postcode
-     * @return \Ianitsky\ViaCep\Api\Data\PostcodeInterface
+     * @inheritdoc
      */
     public function setPostcode($postcode)
     {
@@ -65,8 +59,7 @@ class Postcode extends \Magento\Framework\Api\AbstractExtensibleObject implement
     }
 
     /**
-     * Retrieve existing extension attributes object or create a new one.
-     * @return \Ianitsky\ViaCep\Api\Data\PostcodeExtensionInterface|null
+     * @inheritdoc
      */
     public function getExtensionAttributes()
     {
@@ -74,9 +67,7 @@ class Postcode extends \Magento\Framework\Api\AbstractExtensibleObject implement
     }
 
     /**
-     * Set an extension attributes object.
-     * @param \Ianitsky\ViaCep\Api\Data\PostcodeExtensionInterface $extensionAttributes
-     * @return $this
+     * @inheritdoc
      */
     public function setExtensionAttributes(
         \Ianitsky\ViaCep\Api\Data\PostcodeExtensionInterface $extensionAttributes
@@ -85,8 +76,7 @@ class Postcode extends \Magento\Framework\Api\AbstractExtensibleObject implement
     }
 
     /**
-     * Get street
-     * @return string|null
+     * @inheritdoc
      */
     public function getStreet()
     {
@@ -94,9 +84,7 @@ class Postcode extends \Magento\Framework\Api\AbstractExtensibleObject implement
     }
 
     /**
-     * Set street
-     * @param string $street
-     * @return \Ianitsky\ViaCep\Api\Data\PostcodeInterface
+     * @inheritdoc
      */
     public function setStreet($street)
     {
@@ -104,8 +92,7 @@ class Postcode extends \Magento\Framework\Api\AbstractExtensibleObject implement
     }
 
     /**
-     * Get complement
-     * @return string|null
+     * @inheritdoc
      */
     public function getComplement()
     {
@@ -113,9 +100,7 @@ class Postcode extends \Magento\Framework\Api\AbstractExtensibleObject implement
     }
 
     /**
-     * Set complement
-     * @param string $complement
-     * @return \Ianitsky\ViaCep\Api\Data\PostcodeInterface
+     * @inheritdoc
      */
     public function setComplement($complement)
     {
@@ -123,8 +108,7 @@ class Postcode extends \Magento\Framework\Api\AbstractExtensibleObject implement
     }
 
     /**
-     * Get neighborhood
-     * @return string|null
+     * @inheritdoc
      */
     public function getNeighborhood()
     {
@@ -132,9 +116,7 @@ class Postcode extends \Magento\Framework\Api\AbstractExtensibleObject implement
     }
 
     /**
-     * Set neighborhood
-     * @param string $neighborhood
-     * @return \Ianitsky\ViaCep\Api\Data\PostcodeInterface
+     * @inheritdoc
      */
     public function setNeighborhood($neighborhood)
     {
@@ -142,8 +124,7 @@ class Postcode extends \Magento\Framework\Api\AbstractExtensibleObject implement
     }
 
     /**
-     * Get city
-     * @return string|null
+     * @inheritdoc
      */
     public function getCity()
     {
@@ -151,9 +132,7 @@ class Postcode extends \Magento\Framework\Api\AbstractExtensibleObject implement
     }
 
     /**
-     * Set city
-     * @param string $city
-     * @return \Ianitsky\ViaCep\Api\Data\PostcodeInterface
+     * @inheritdoc
      */
     public function setCity($city)
     {
@@ -161,8 +140,7 @@ class Postcode extends \Magento\Framework\Api\AbstractExtensibleObject implement
     }
 
     /**
-     * Get state
-     * @return string|null
+     * @inheritdoc
      */
     public function getState()
     {
@@ -170,9 +148,7 @@ class Postcode extends \Magento\Framework\Api\AbstractExtensibleObject implement
     }
 
     /**
-     * Set state
-     * @param string $state
-     * @return \Ianitsky\ViaCep\Api\Data\PostcodeInterface
+     * @inheritdoc
      */
     public function setState($state)
     {
@@ -180,8 +156,7 @@ class Postcode extends \Magento\Framework\Api\AbstractExtensibleObject implement
     }
 
     /**
-     * Get ibge
-     * @return string|null
+     * @inheritdoc
      */
     public function getIbge()
     {
@@ -189,12 +164,42 @@ class Postcode extends \Magento\Framework\Api\AbstractExtensibleObject implement
     }
 
     /**
-     * Set ibge
-     * @param string $ibge
-     * @return \Ianitsky\ViaCep\Api\Data\PostcodeInterface
+     * @inheritdoc
      */
     public function setIbge($ibge)
     {
         return $this->setData(self::IBGE, $ibge);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getRegion()
+    {
+        return $this->_get(self::REGION);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function setRegion($region)
+    {
+        return $this->setData(self::REGION, $region);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getRegionId()
+    {
+        return $this->_get(self::REGION_ID);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function setRegionId($regionId)
+    {
+        return $this->setData(self::REGION_ID, $regionId);
     }
 }
