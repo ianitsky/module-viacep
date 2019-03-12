@@ -48,7 +48,7 @@
 			</argument>
 			<settings>
 				<dataType>text</dataType>
-				<label translate="true">postcode</label>
+				<label translate="true">Postcode</label>
 				<dataScope>postcode</dataScope>
 				<validation>
 					<rule name="required-entry" xsi:type="boolean">true</rule>
@@ -63,7 +63,7 @@
 			</argument>
 			<settings>
 				<dataType>text</dataType>
-				<label translate="true">street</label>
+				<label translate="true">Street</label>
 				<dataScope>street</dataScope>
 				<validation>
 					<rule name="required-entry" xsi:type="boolean">false</rule>
@@ -78,7 +78,7 @@
 			</argument>
 			<settings>
 				<dataType>text</dataType>
-				<label translate="true">complement</label>
+				<label translate="true">Complement</label>
 				<dataScope>complement</dataScope>
 				<validation>
 					<rule name="required-entry" xsi:type="boolean">false</rule>
@@ -93,7 +93,7 @@
 			</argument>
 			<settings>
 				<dataType>text</dataType>
-				<label translate="true">neighborhood</label>
+				<label translate="true">Neighborhood</label>
 				<dataScope>neighborhood</dataScope>
 				<validation>
 					<rule name="required-entry" xsi:type="boolean">false</rule>
@@ -108,7 +108,7 @@
 			</argument>
 			<settings>
 				<dataType>text</dataType>
-				<label translate="true">city</label>
+				<label translate="true">City</label>
 				<dataScope>city</dataScope>
 				<validation>
 					<rule name="required-entry" xsi:type="boolean">true</rule>
@@ -123,7 +123,7 @@
 			</argument>
 			<settings>
 				<dataType>text</dataType>
-				<label translate="true">region</label>
+				<label translate="true">Region</label>
 				<dataScope>region</dataScope>
 				<validation>
 					<rule name="required-entry" xsi:type="boolean">true</rule>
@@ -138,7 +138,7 @@
 			</argument>
 			<settings>
 				<dataType>text</dataType>
-				<label translate="true">ibge</label>
+				<label translate="true">IBGE</label>
 				<dataScope>ibge</dataScope>
 				<validation>
 					<rule name="required-entry" xsi:type="boolean">false</rule>
