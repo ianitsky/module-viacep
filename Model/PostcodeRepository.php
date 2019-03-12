@@ -138,7 +138,7 @@ class PostcodeRepository implements PostcodeRepositoryInterface
         $postcode = $this->postcodeFactory->create();
         $this->resource->load($postcode, $postcodeId);
         if (!$postcode->getId()) {
-            throw new NoSuchEntityException(__('Postcode with id "%1" does not exist.', $postcodeId));
+            throw new NoSuchEntityException(__("Postcode with id '%1' does not exist.", $postcodeId));
         }
         return $postcode->getDataModel();
     }
